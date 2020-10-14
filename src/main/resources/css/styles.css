@@ -1,0 +1,5 @@
+#main_scene {
+    -fx-background-image: url('../images/back.png');
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}

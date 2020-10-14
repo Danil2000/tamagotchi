@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity"  maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="299.0" prefWidth="540.0"
+      stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:id="main_scene" fx:controller="world.ucode.Controlers.MainController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tamagotchi" textAlignment="CENTER" wrappingWidth="595.2060546875">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Text>
+      <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="190.0" text="New Game" onAction="#onClicked">
+         <VBox.margin>
+            <Insets left="200.0" top="40.0"/>
+         </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="190.0" text="Exit" onAction="#exit">
+         <VBox.margin>
+            <Insets left="200.0" top="40.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
