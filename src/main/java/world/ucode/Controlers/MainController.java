@@ -11,6 +11,6 @@ public class MainController {
        main.start(Main.currentStage);
     }
     public void exit() {
-        System.exit(1);
+        System.exit(0);
     }
 }

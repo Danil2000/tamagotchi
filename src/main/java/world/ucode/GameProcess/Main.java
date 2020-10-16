@@ -46,7 +46,7 @@ public class Main extends Application {
         currentStage.setScene(new Scene(root));
         currentStage.setMinWidth(540);
         currentStage.setMinHeight(300);
-        currentStage.setResizable(false);
+        currentStage.setResizable(true);
         currentStage.setTitle("Tamagotchi");
         currentStage.show();
     }

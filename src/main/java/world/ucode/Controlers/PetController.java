@@ -29,30 +29,6 @@ public class PetController implements Initializable {
     private BooleanProperty running = new SimpleBooleanProperty();
     private DoubleProperty time = new SimpleDoubleProperty();
 
-    public AnimationTimer timer = new AnimationTimer() {
-        private long startTime;
-
-        @Override
-        public void start() {
-            startTime = System.currentTimeMillis();
-            running.set(true);
-            super.start();
-            System.out.println(startTime + "start");
-        }
-
-        @Override
-        public void stop() {
-            running.set(false);
-            super.stop();
-            System.out.println(startTime + "end");
-        }
-
-        @Override
-        public void handle(long l) {
-            long now = System.currentTimeMillis();
-            time.set((now - startTime) / 1000);
-        }
-    };
 
     public PetController() throws IOException {
         imgs[0] = new Image("/images/pet1.png");
@@ -86,12 +62,6 @@ public class PetController implements Initializable {
         main.start(Main.currentStage);
         GameController game = Main.loader3.getController();
         game.setImage(imgs[index]);
-        nextButton.textProperty().bind(
-                Bindings.when(running)
-                        .then("Stop")
-                        .otherwise("Start")
-        );
-        timer.start();
     }
 
     @Override

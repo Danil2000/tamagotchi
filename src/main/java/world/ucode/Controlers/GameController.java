@@ -1,15 +1,18 @@
 package world.ucode.Controlers;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import world.ucode.GameProcess.Main;
+import world.ucode.GameProcess.Timer;
 import world.ucode.Interfaces.IPet;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.TimerTask;
 
 public class GameController implements Initializable, IPet {
     public double health = 0.8;
@@ -17,6 +20,8 @@ public class GameController implements Initializable, IPet {
     public double hunger = 0.5;
     public double thirst = 0.5;
     public double cleanless = 0.9;
+
+    private AnimationTimer timer = new Timer();
 
     @FXML
     public ImageView img;
@@ -30,6 +35,7 @@ public class GameController implements Initializable, IPet {
     public ProgressBar thirstBar;
     @FXML
     public ProgressBar cleanlessBar;
+
 
     @FXML
     public void setImage(Image image) {
@@ -70,8 +76,6 @@ public class GameController implements Initializable, IPet {
     public void clean_up() {
         cleanless += 0.03;
         cleanlessBar.setProgress(cleanless);
-        PetController game = Main.loader2.getController();
-        game.timer.stop();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -80,5 +84,6 @@ public class GameController implements Initializable, IPet {
         hungerBar.setProgress(hunger);
         thirstBar.setProgress(thirst);
         cleanlessBar.setProgress(cleanless);
+        timer.start();
     }
 }
