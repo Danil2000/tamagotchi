@@ -1,13 +1,10 @@
-package world.ucode.GameProcess;
+package world.ucode.module;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import world.ucode.Controlers.MainController;
-
-import java.io.File;
 
 public class Main extends Application {
     private Parent root;
@@ -15,14 +12,17 @@ public class Main extends Application {
     public static enum States {
         StartGame,
         NewPet,
-        Game
+        Game,
+        EndGame
     };
     public static FXMLLoader loader;
 
     public static FXMLLoader loader2;
     public static FXMLLoader loader3;
+    public static FXMLLoader loader4;
 
     public static States state = States.StartGame;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         switch (state) {
@@ -37,6 +37,10 @@ public class Main extends Application {
             case Game:
                 loader3 = new FXMLLoader(getClass().getResource("/fxml/game.fxml"));
                 root = loader3.load();
+                break;
+            case EndGame:
+                loader4 = new FXMLLoader(getClass().getResource("/fxml/endGame.fxml"));
+                root = loader4.load();
                 break;
             default:
                 return;

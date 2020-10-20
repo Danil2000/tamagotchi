@@ -25,7 +25,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField maxWidth="200.0" prefWidth="50.0">
+      <TextField maxWidth="200.0" prefWidth="50.0" fx:id="name">
          <VBox.margin>
             <Insets left="175.0" />
          </VBox.margin>

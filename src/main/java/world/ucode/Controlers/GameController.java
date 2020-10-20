@@ -6,13 +6,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import world.ucode.GameProcess.Main;
-import world.ucode.GameProcess.Timer;
+import world.ucode.module.Timer;
 import world.ucode.Interfaces.IPet;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.TimerTask;
 
 public class GameController implements Initializable, IPet {
     public double health = 0.8;

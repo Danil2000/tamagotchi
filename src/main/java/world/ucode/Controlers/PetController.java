@@ -1,7 +1,5 @@
 package world.ucode.Controlers;
 
-import javafx.animation.AnimationTimer;
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -9,13 +7,16 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import world.ucode.GameProcess.Main;
+import world.ucode.module.DB;
+import world.ucode.module.Main;
 
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PetController implements Initializable {
@@ -23,18 +24,12 @@ public class PetController implements Initializable {
     public ImageView imgView;
     @FXML
     public Button nextButton;
+    @FXML
+    public TextField name;
 
     public final Image[] imgs = new Image[3];
     private int index = 0;
-    private BooleanProperty running = new SimpleBooleanProperty();
-    private DoubleProperty time = new SimpleDoubleProperty();
 
-
-    public PetController() throws IOException {
-        imgs[0] = new Image("/images/pet1.png");
-        imgs[1] = new Image("/images/pet2.png");
-        imgs[2] = new Image("/images/pet3.png");
-    }
     @FXML
     public void prevClicked() {
         if (index != 0) {
@@ -62,10 +57,19 @@ public class PetController implements Initializable {
         main.start(Main.currentStage);
         GameController game = Main.loader3.getController();
         game.setImage(imgs[index]);
+        save();
     }
+    public void save() throws SQLException, ClassNotFoundException {
+        String petName = name.getText();
+        DB data = new DB();
+        data.getConnection(petName);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        imgs[0] = new Image("/images/pet1.png");
+        imgs[1] = new Image("/images/pet2.png");
+        imgs[2] = new Image("/images/pet3.png");
     }
 }

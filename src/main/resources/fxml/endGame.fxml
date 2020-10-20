@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" fx:controller="world.ucode.Controlers.EndController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#d34343" layoutX="182.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Pet Die" textAlignment="CENTER" wrappingWidth="236.2060546875" AnchorPane.leftAnchor="182.0">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Text>
+      <Button layoutX="240.0" onAction="#newGame" layoutY="178.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="131.0" text="New Game" />
+      <Button layoutX="240.0" onAction="#exit" layoutY="286.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="131.0" text="Exit" />
+   </children>
+</AnchorPane>

@@ -1,6 +1,8 @@
 /Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/Controlers/MainController.java
+/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/module/Timer.java
 /Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/Controlers/PetController.java
-/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/GameProcess/Main.java
 /Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/Controlers/GameController.java
-/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/GameProcess/Timer.java
 /Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/Interfaces/IPet.java
+/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/module/DB.java
+/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/module/Main.java
+/Users/dyanchuk/Desktop/Tamagotchi/src/main/java/world/ucode/Controlers/EndController.java
