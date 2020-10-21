@@ -16,31 +16,25 @@ public class DB {
         Class.forName("org.sqlite.JDBC");
         con = DriverManager.getConnection("jdbc:sqlite:Tamagotchi.s3db");
         stmt = con.createStatement();
-        System.out.println(name);
-        userExist = checkUser(name);
-        System.out.println(userExist);
-        if(userExist == false){
-            createTable(name);
-        }
-        else {
-            System.out.println("user exist");
-        }
+        checkUser(name);
+        //checkUser(name);
     }
     public void createTable(String name)  {
         try {
             //stmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text);");
-            stmt.execute("insert into 'users'('name') values('"+ name +"');");
+            stmt.execute("insert into 'users'('name', 'health', 'happiness', 'thirst', 'hunger', 'cleanliness') values('"+ name +"', 0, 0, 0, 0, 0);");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-    public boolean checkUser(String name) throws SQLException {
-       rs = stmt.executeQuery("select id from users");
+    public void checkUser(String name) throws SQLException {
+       rs = stmt.executeQuery("select * from users");
        while (rs.next()) {
            if (name.equals(rs.getString("name"))) {
-               return true;
+               System.out.println("user exist");
+               return;
            }
        }
-       return false;
+        createTable(name);
     }
 }
