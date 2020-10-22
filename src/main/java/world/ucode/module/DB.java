@@ -17,11 +17,9 @@ public class DB {
         con = DriverManager.getConnection("jdbc:sqlite:Tamagotchi.s3db");
         stmt = con.createStatement();
         checkUser(name);
-        //checkUser(name);
     }
     public void createTable(String name)  {
         try {
-            //stmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text);");
             stmt.execute("insert into 'users'('name', 'health', 'happiness', 'thirst', 'hunger', 'cleanliness') values('"+ name +"', 0, 0, 0, 0, 0);");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
