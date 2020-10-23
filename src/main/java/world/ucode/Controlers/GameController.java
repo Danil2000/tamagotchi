@@ -1,23 +1,29 @@
 package world.ucode.Controlers;
 
 import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.WindowEvent;
+import world.ucode.module.DB;
+import world.ucode.module.Main;
 import world.ucode.module.Timer;
 import world.ucode.Interfaces.IPet;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable, IPet {
-    public double health = 0.8;
-    public double happiness = 0.7;
-    public double hunger = 0.5;
-    public double thirst = 0.5;
-    public double cleanless = 0.9;
+    public static double health = 0.8;
+    public static double happiness = 0.7;
+    public static double hunger = 0.5;
+    public static double thirst = 0.5;
+    public static double cleanless = 0.9;
+    private DB db = new DB();
 
     private AnimationTimer timer = new Timer();
 
@@ -34,10 +40,22 @@ public class GameController implements Initializable, IPet {
     @FXML
     public ProgressBar cleanlessBar;
 
+    private String petName;
 
     @FXML
-    public void setImage(Image image) {
+    public void setImage(Image image, String name) {
         img.setImage(image);
+        this.petName = name;
+        Main.currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                try {
+                    db.updateTable(petName);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
     }
 
     @FXML

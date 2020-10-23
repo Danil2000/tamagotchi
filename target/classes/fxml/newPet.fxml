@@ -7,18 +7,17 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" fx:controller="world.ucode.Controlers.PetController" minWidth="-Infinity" prefHeight="468.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controlers.PetController">
    <children>
-      <Button layoutX="181.0" layoutY="406.0" mnemonicParsing="false" onAction="#next" prefHeight="27.0" prefWidth="250.0" text="Choose" />
-      <Button fx:id="nextButton" layoutX="176.0" layoutY="347.0" mnemonicParsing="false" onAction="#nextClicked" prefHeight="27.0" prefWidth="87.0" text="Next" />
-      <Button layoutX="337.0" layoutY="347.0" mnemonicParsing="false" onAction="#prevClicked" prefHeight="27.0" prefWidth="87.0" text="Previous" />
-      <Text layoutX="173.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Pet" textAlignment="CENTER" wrappingWidth="266.2060546875">
+      <Button layoutX="182.0" layoutY="406.0" mnemonicParsing="false" onAction="#next" prefHeight="27.0" prefWidth="250.0" text="Choose" />
+      <Button fx:id="nextButton" layoutX="173.0" layoutY="347.0" mnemonicParsing="false" onAction="#nextClicked" prefHeight="27.0" prefWidth="87.0" text="Next" />
+      <Button layoutX="344.0" layoutY="347.0" mnemonicParsing="false" onAction="#prevClicked" prefHeight="27.0" prefWidth="87.0" text="Previous" />
+      <Text layoutX="173.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Pet" textAlignment="CENTER" wrappingWidth="266.2060546875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgView" fitHeight="135.0" fitWidth="183.0" layoutX="219.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgView" fitHeight="135.0" fitWidth="183.0" layoutX="239.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/pet1.png" />
          </image>

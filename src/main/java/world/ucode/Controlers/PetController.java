@@ -53,10 +53,11 @@ public class PetController implements Initializable {
     @FXML
     public void next() throws Exception {
         Main main = new Main();
+
         Main.state = Main.States.Game;
         main.start(Main.currentStage);
         GameController game = Main.loader3.getController();
-        game.setImage(imgs[index]);
+        game.setImage(imgs[index], name.getText());
         save();
     }
     public void save() throws SQLException, ClassNotFoundException {

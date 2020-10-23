@@ -1,5 +1,8 @@
 package world.ucode.module;
 
+import world.ucode.Controlers.GameController;
+import world.ucode.Controlers.PetController;
+
 import java.sql.*;
 
 public class DB {
@@ -35,4 +38,17 @@ public class DB {
        }
         createTable(name);
     }
+    public void updateTable(String name) throws SQLException {
+        String sql = "update users  set health = ?," + "happiness = ?," + "thirst = ?, " + "hunger = ?,"
+                + "cleanliness = ? where name = ?;";
+       PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, name);
+        pstmt.setString(2, GameController.health + "");
+        pstmt.setString(3, GameController.happiness + "");
+        pstmt.setString(4, GameController.thirst + "");
+        pstmt.setString(5, GameController.hunger + "");
+        pstmt.setString(6, GameController.cleanless + "");
+        pstmt.executeUpdate();
+    }
+
 }
