@@ -1,7 +1,7 @@
 package world.ucode.Controlers;
 
 import javafx.fxml.FXML;
-import world.ucode.module.Main;
+import world.ucode.view.Main;
 
 public class MainController {
     @FXML

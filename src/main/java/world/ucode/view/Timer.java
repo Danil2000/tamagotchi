@@ -1,4 +1,4 @@
-package world.ucode.module;
+package world.ucode.view;
 
 import javafx.animation.AnimationTimer;
 import world.ucode.Controlers.GameController;
@@ -26,11 +26,7 @@ public class Timer extends AnimationTimer {
             game.cleanless -= 0.0002;
             game.happiness -= 0.0002;
             game.thirst -= 0.0002;
-            game.hungerBar.setProgress(game.hunger);
-            game.healthBar.setProgress(game.health);
-            game.thirstBar.setProgress(game.thirst);
-            game.cleanlessBar.setProgress(game.cleanless);
-            game.happinessBar.setProgress(game.happiness);
+            game.setProgressBars(game.hunger, game.cleanless, game.health, game.thirst, game.happiness);
         }
     }
 }

@@ -1,4 +1,4 @@
-package world.ucode.Interfaces;
+package world.ucode.model;
 
 public interface IPet {
     public void play();

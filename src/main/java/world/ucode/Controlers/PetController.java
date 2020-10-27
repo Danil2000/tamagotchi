@@ -1,20 +1,15 @@
 package world.ucode.Controlers;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import world.ucode.module.DB;
-import world.ucode.module.Main;
+import world.ucode.view.DB;
+import world.ucode.view.Main;
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -27,8 +22,8 @@ public class PetController implements Initializable {
     @FXML
     public TextField name;
 
-    public final Image[] imgs = new Image[3];
-    private int index = 0;
+    public static final Image[] imgs = new Image[3];
+    public static int index = 0;
 
     @FXML
     public void prevClicked() {

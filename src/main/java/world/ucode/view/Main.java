@@ -1,4 +1,4 @@
-package world.ucode.module;
+package world.ucode.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,8 +1,9 @@
 world/ucode/Controlers/PetController.class
-world/ucode/module/Main$States.class
-world/ucode/module/Main.class
-world/ucode/Interfaces/IPet.class
+world/ucode/model/IPet.class
+world/ucode/view/DB.class
+world/ucode/view/Main$States.class
+world/ucode/view/Main$1.class
 world/ucode/Controlers/GameController.class
+world/ucode/view/Timer.class
 world/ucode/Controlers/MainController.class
-world/ucode/module/Main$1.class
-world/ucode/module/Timer.class
+world/ucode/view/Main.class

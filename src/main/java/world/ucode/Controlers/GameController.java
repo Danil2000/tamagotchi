@@ -8,21 +8,21 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.WindowEvent;
-import world.ucode.module.DB;
-import world.ucode.module.Main;
-import world.ucode.module.Timer;
-import world.ucode.Interfaces.IPet;
+import world.ucode.view.DB;
+import world.ucode.view.Main;
+import world.ucode.view.Timer;
+import world.ucode.model.IPet;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable, IPet {
-    public static double health = 0.8;
-    public static double happiness = 0.7;
-    public static double hunger = 0.5;
-    public static double thirst = 0.5;
-    public static double cleanless = 0.9;
+    public static double health = 1;
+    public static double happiness = 1;
+    public static double hunger = 1;
+    public static double thirst = 1;
+    public static double cleanless = 1;
     private DB db = new DB();
 
     private AnimationTimer timer = new Timer();
@@ -46,16 +46,21 @@ public class GameController implements Initializable, IPet {
     public void setImage(Image image, String name) {
         img.setImage(image);
         this.petName = name;
-        Main.currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
-                try {
-                    db.updateTable(petName);
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+        if (Main.state == Main.States.Game) {
+            Main.currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent windowEvent) {
+                    try {
+                        db.updateTable(petName);
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
+        }
+        else {
+            System.exit(0);
+        }
     }
 
     @FXML
@@ -86,7 +91,13 @@ public class GameController implements Initializable, IPet {
         }
         healthBar.setProgress(health);
     }
-
+    public void setProgressBars(double hungers, double healths, double thirsts, double happinesses, double cleanlesses) {
+        hungerBar.setProgress(hungers);
+        healthBar.setProgress(healths);
+        thirstBar.setProgress(thirsts);
+        cleanlessBar.setProgress(cleanlesses);
+        happinessBar.setProgress(happinesses);
+    }
     @FXML
     @Override
     public void clean_up() {
